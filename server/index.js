@@ -21,7 +21,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(urlencoded({ extended: true }));
 const corsOptions = {
-    origin: process.env.URL,
+    origin: "https://twitterclone-1-g05t.onrender.com",
     credentials: true
 }
 app.use(cors(corsOptions));
