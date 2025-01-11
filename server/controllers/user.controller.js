@@ -220,7 +220,7 @@ export const editProfile = async (req, res) => {
 export const getSuggestedUser = async (req, res) => {
     try {
         const suggestedUsers = await User.find({ _id: { $ne: req.id } }).select("-password");
-        if (!suggestedUsers) {
+        if (!suggestedUsers || suggestedUsers.length<1) {
             return res.status(404).json({
                 message: "Currently Don not have any users"
             })

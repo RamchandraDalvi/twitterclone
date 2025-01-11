@@ -14,5 +14,4 @@ router.route("/suggestedusers").get(getSuggestedUser);
 router.route("/followOrUnfollow/:id").get(isAuthenticated, followOrUnfollow);    
 router.route("/search").get(isAuthenticated, searchUsers);
  
-
 export default router;
