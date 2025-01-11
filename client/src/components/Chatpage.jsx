@@ -19,7 +19,7 @@ const Chatpage = () => {
     const sendMessage = async (receiverId) => {
         try {
             const res = await axios.post(
-                `http://localhost:8000/api/v1/message/send/${receiverId}`,
+                `https://twitterclone-1-g05t.onrender.com/api/v1/message/send/${receiverId}`,
                 { textMessage },
                 {
                     headers: { "Content-Type": "application/json" },

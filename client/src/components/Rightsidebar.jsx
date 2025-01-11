@@ -23,7 +23,7 @@ const Rightsidebar = () => {
 
     try {
       console.log("Search Term:", searchTerm); // Debugging line: log the search term
-      const res = await axios.get(`http://localhost:8000/api/v1/user/search?search=${searchTerm}`, {
+      const res = await axios.get(`https://twitterclone-1-g05t.onrender.com/api/v1/user/search?search=${searchTerm}`, {
         headers: {
           "Content-Type": "application/json", // Set content type to application/json
         },

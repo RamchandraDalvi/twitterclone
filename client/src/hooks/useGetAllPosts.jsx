@@ -9,7 +9,7 @@ export const useGetAllPosts = () => {
         const fetchAllPost = async () => {
             try {
                 const res = await axios.get(
-                    "http://localhost:8000/api/v1/post/getallpost",
+                    "https://twitterclone-1-g05t.onrender.com/v1/post/getallpost",
                     { withCredentials: true }
                 );
 

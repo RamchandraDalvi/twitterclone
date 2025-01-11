@@ -25,7 +25,7 @@ const Profile = () => {
   const followUnfollow = async () => {
     try {
       const res = await axios.get(
-        `http://localhost:8000/api/v1/user/followOrUnfollow/${userId}`,
+        `https://twitterclone-1-g05t.onrender.com/api/v1/user/followOrUnfollow/${userId}`,
         { withCredentials: true }
       );
 

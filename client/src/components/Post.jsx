@@ -34,7 +34,7 @@ const Post = ({ post }) => {
 
     const deletePosthandler = async () => {
         try {
-            const res = await axios.delete(`http://localhost:8000/api/v1/post/delete/${post._id}/`, { withCredentials: true });
+            const res = await axios.delete(`https://twitterclone-1-g05t.onrender.com/api/v1/post/delete/${post._id}/`, { withCredentials: true });
             if (res.data.success) {
                 const updatedPosts = posts.filter((item) => item._id !== post?._id);
                 dispatch(setPosts(updatedPosts))
@@ -48,7 +48,7 @@ const Post = ({ post }) => {
     const likeordislikehandler = async () => {
         try {
             const action = liked ? "dislike" : "like";
-            const res = await axios.get(`http://localhost:8000/api/v1/post/${post?._id}/${action}`, { withCredentials: true })
+            const res = await axios.get(`https://twitterclone-1-g05t.onrender.com/api/v1/post/${post?._id}/${action}`, { withCredentials: true })
             if (res.data.success) {
                 const updatedlikes = liked ? postlike - 1 : postlike + 1;
                 setPostlike(updatedlikes)
@@ -69,7 +69,7 @@ const Post = ({ post }) => {
 
     const bookmarkHandler = async () => {
         try {
-            const res = await axios.get(`http://localhost:8000/api/v1/post/${post?._id}/bookmarks`, { withCredentials: true })
+            const res = await axios.get(`https://twitterclone-1-g05t.onrender.com/api/v1/post/${post?._id}/bookmarks`, { withCredentials: true })
             if (res.data.success) {
                 toast.success(res.data.message);
             }
@@ -81,7 +81,7 @@ const Post = ({ post }) => {
     const commentHandler = async () => {
         try {
             const res = await axios.post(
-                `http://localhost:8000/api/v1/post/${post?._id}/comment`,
+                `https://twitterclone-1-g05t.onrender.com/api/v1/post/${post?._id}/comment`,
                 { text },
                 { headers: { 'Content-Type': 'application/json' }, withCredentials: true }
             );

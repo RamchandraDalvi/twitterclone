@@ -11,7 +11,7 @@ export const useGetAllMessage = (id) => {
         const fetchAllMessage = async () => {
             try {
                 const res = await axios.get(
-                    `http://localhost:8000/api/v1/message/all/${selectedUser?._id}`,
+                    `https://twitterclone-1-g05t.onrender.com/v1/message/all/${selectedUser?._id}`,
                     { withCredentials: true }
                 );
 

@@ -26,7 +26,7 @@ const CommentsModal = ({ closeCommentModal }) => {
   const commentHandler = async () => {
     try {
       const res = await axios.post(
-        `http://localhost:8000/api/v1/post/${selectedPost?._id}/comment`,
+        `https://twitterclone-1-g05t.onrender.com/api/v1/post/${selectedPost?._id}/comment`,
         { text },
         {
           headers: {

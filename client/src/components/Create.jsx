@@ -48,7 +48,7 @@ const Create = () => {
         }
 
         try {
-            const res = await axios.post("http://localhost:8000/api/v1/post/addpost", formData, {
+            const res = await axios.post("https://twitterclone-1-g05t.onrender.com/api/v1/post/addpost", formData, {
                 withCredentials: true,
                 headers: {
                     "Content-Type": "multipart/form-data",
