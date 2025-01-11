@@ -217,22 +217,54 @@ export const editProfile = async (req, res) => {
     }
 };
 
+// export const getSuggestedUser = async (req, res) => {
+//     const users = await User
+//     try {
+//         const suggestedUsers = await User.find({ _id: { $ne: req.id } }).select("-password");
+//         if (!suggestedUsers || suggestedUsers.length<1) {
+//             return res.status(404).json({
+//                 message: "Currently Don not have any users"
+//             })
+//         }
+//         return res.status(200).json({
+//             success: true,
+//             users: suggestedUsers
+//         })
+//     } catch (error) {
+//         console.log(error)
+//     }
+// }
+
 export const getSuggestedUser = async (req, res) => {
     try {
-        const suggestedUsers = await User.find({ _id: { $ne: req.id } }).select("-password");
-        if (!suggestedUsers || suggestedUsers.length<1) {
+        // Fetch all users and exclude sensitive fields like password
+        const users = await User.find().select("-password");
+
+        // Check if any users are returned
+        if (!users || users.length < 1) {
             return res.status(404).json({
-                message: "Currently Don not have any users"
-            })
+                success: false,
+                message: "No users found.",
+            });
         }
+
+        // Return the list of users
         return res.status(200).json({
             success: true,
-            users: suggestedUsers
-        })
+            users,
+        });
     } catch (error) {
-        console.log(error)
+        console.error("Error fetching users:", error);
+
+        // Handle server errors
+        return res.status(500).json({
+            success: false,
+            message: "An error occurred while fetching users.",
+            error: error.message || error,
+        });
     }
-}
+};
+
 
 export const followOrUnfollow = async (req, res) => {
     try {
