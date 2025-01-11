@@ -1,7 +1,7 @@
 import React from 'react';
 import { useSelector } from 'react-redux';
 import { useGetAllMessage } from '../hooks/useGetAllMessage';
-import useGetRTM from '../hooks/useGetRtm';
+import useGetRTM from '../hooks/useGetRTM';
 
 const Messages = () => {
     const { messages } = useSelector((store) => store.chat);
