@@ -9,7 +9,7 @@ export const useGetSuggestUsers = () => {
         const fetchSuggestedUsers = async () => {
             try {
                 const res = await axios.get(
-                    "https://twitterclone-1-g05t.onrender.com/v1/user/suggestedusers",
+                    "https://twitterclone-1-g05t.onrender.com/v1/user/suggesteduser",
                     { withCredentials: true }
                 );
 
