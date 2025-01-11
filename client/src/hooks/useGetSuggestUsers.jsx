@@ -12,7 +12,6 @@ export const useGetSuggestUsers = () => {
                     "https://twitterclone-1-g05t.onrender.com/v1/user/suggestedusers",
                     { withCredentials: true }
                 );
-
                 // Check if the response indicates success
                 if (res.data.success) {
                     console.log("Users fetched successfully:", res.data.users);
