@@ -15,9 +15,7 @@ export const useGetSuggestUsers = () => {
 
                 // Check if the response indicates success
                 if (res.data.success) {
-                    console.log("Users fetched successfully:", res.data.users);
                     dispatch(setsuggestedUsers(res.data.users));
-                    // Handle posts here (e.g., store in state or context)
                 } 
             } catch (error) {
                 // Log the error with a more descriptive message
