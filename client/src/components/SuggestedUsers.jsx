@@ -48,10 +48,10 @@ const SuggestedUsers = () => {
         mode === "dark" ? "bg-gray-800 text-white" : "bg-white text-black"
       }`}
     >
-      <h2 className="text-xl font-semibold mb-4">Suggestions for you</h2>
+      <h2 className="text-xl font-semibold mb-4">Suggestions</h2>
       {suggestedUsers?.length === 0 ? (
         <p className="text-center text-gray-500">
-          No suggestions available at the moment.
+          No suggestions available at the time.
         </p>
       ) : (
         <div className="space-y-4">
