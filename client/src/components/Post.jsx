@@ -6,7 +6,7 @@ import { BsBookmark } from "react-icons/bs";
 import { FaBookmark } from "react-icons/fa";
 import CommentsModal from "./CommentsModal";
 import { useDispatch, useSelector } from "react-redux";
-import toast from "react-hot-toast";    
+import toast from "react-hot-toast";
 import axios from "axios";
 import { setPosts, setselectedPost } from "../redux/postSlice";
 import myContext from "./Context/data/myContext";
@@ -118,10 +118,11 @@ const Post = ({ post }) => {
                                 <span className="text-gray-500"> · 2h</span>
                             </div>
                             <div className="relative">
+                                {showMenu && (
+                                    <>
                                 <button onClick={toggleMenu} className="text-gray-500 hover:bg-gray-100 p-2 rounded-full">
                                     <FiMoreHorizontal size={24} />
                                 </button>
-                                {showMenu && (
                                     <div className="absolute right-0 mt-2 bg-white border rounded-lg shadow-lg z-10">
                                         <ul className="py-2">
                                             {user && user?._id === post?.author?._id && (
@@ -129,6 +130,7 @@ const Post = ({ post }) => {
                                             )}
                                         </ul>
                                     </div>
+                                    </>
                                 )}
                             </div>
                         </div>
@@ -142,7 +144,7 @@ const Post = ({ post }) => {
                         <div className={`flex justify-between items-center mt-4 ${mode === "dark" ? "text-gray-500" : "text-gray-700"}`}>
                             <div className="flex items-center">
                                 <button onClick={likeordislikehandler} className="flex items-center">
-                                    {liked ? <FaHeart color="red" className="mr-2"/> : <FiHeart className="mr-2" />}
+                                    {liked ? <FaHeart color="red" className="mr-2" /> : <FiHeart className="mr-2" />}
                                     <span>{postlike}</span>
                                 </button>
                             </div>
@@ -154,7 +156,7 @@ const Post = ({ post }) => {
                             </div>
                             <div className="flex items-center">
                                 <button onClick={bookmarkHandler} className="flex items-center">
-                                    {userProfile?.bookmarks?.some(bookmark => bookmark._id === post._id) ? <FaBookmark size={20}/> : <BsBookmark className="mr-2" size={20} />}
+                                    {userProfile?.bookmarks?.some(bookmark => bookmark._id === post._id) ? <FaBookmark size={20} /> : <BsBookmark className="mr-2" size={20} />}
                                 </button>
                             </div>
                         </div>
