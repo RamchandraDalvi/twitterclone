@@ -95,7 +95,7 @@ const LeftSidebar = () => {
           name={user?.name || "User"}
         />
       ),
-      text : user?.name,
+      text : user?.name || user?.username,
     },
     { icon: <FiLogOut size={28} />, text: "Logout" },
     { text: "Post" },
