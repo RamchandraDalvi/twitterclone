@@ -56,7 +56,7 @@ const LeftSidebar = () => {
       case "Post":
         setOpenPost(true);
         break;
-      case user?.name:
+      case user?.name || user?.username:
         navigate(`/profile/${user?._id}`);
         break;
       case "Home":
